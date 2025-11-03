@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mis Carreras Favoritas - VOCATIO</title>
+    <link rel="stylesheet" href="../../css/styles.css">
+    <link rel="stylesheet" href="../../css/components.css">
+    <link rel="stylesheet" href="../../css/responsive.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-dashboard">
+        <div class="container">
+            <input type="checkbox" id="menu-toggle" class="hamburger-menu">
+            <div class="navbar-content">
+                <a href="../dashboard/dashboard.html" class="logo">
+                    <span class="logo-text">vocatio</span>
+                </a>
+                <label for="menu-toggle" class="hamburger-icon">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </label>
+                <ul class="nav-menu">
+                    <li><a href="../careers/explore.html">Explorar carreras</a></li>
+                    <li><a href="../events/events.html">Eventos</a></li>
+                    <li><a href="../vocational-test/test.html">Test vocacional</a></li>
+                    <li><a href="../results/results.html">Resultados</a></li>
+                    <li><a href="learning-path.html">Ruta de aprendizaje</a></li>
+                    <li><a href="progress.html">Progreso</a></li>
+                </ul>
+                <div class="profile-dropdown">
+                    <input type="checkbox" id="profile-dropdown-toggle" class="profile-dropdown-checkbox">
+                    <label for="profile-dropdown-toggle" class="profile-dropdown-label">
+                        <img src="../../assets/images/jose-profile.jpg" alt="José" class="profile-image">
+                    </label>
+                    <div class="dropdown-menu">
+                        <a href="../profile/profile.html">Mi Perfil</a>
+                        <a href="../notifications/notifications.html">Mis Notificaciones</a>
+                        <a href="../../index.html" class="logout">Cerrar sesión</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main style="padding: var(--spacing-3xl) 0; background-color: var(--gray-lighter); min-height: calc(100vh - 80px);">
+        <div class="container">
+            <!-- Header -->
+            <header style="text-align: center; margin-bottom: var(--spacing-3xl);">
+                <h1 style="margin-bottom: var(--spacing-md); color: var(--dark);">Mis Carreras Favoritas</h1>
+                <p style="color: var(--gray); font-size: 1.125rem;">Carreras que has guardado para explorar más tarde</p>
+            </header>
+
+            <!-- Empty State -->
+            <div id="empty-state" style="display: none; text-align: center; padding: var(--spacing-3xl); background-color: var(--white); border-radius: var(--radius-lg); max-width: 600px; margin: 0 auto;">
+                <div style="font-size: 4rem; margin-bottom: var(--spacing-lg);">💜</div>
+                <h2 style="margin-bottom: var(--spacing-md); color: var(--dark);">No tienes carreras favoritas aún</h2>
+                <p style="color: var(--gray); margin-bottom: var(--spacing-2xl);">Explora carreras y marca tus favoritas para verlas aquí</p>
+                <a href="../careers/explore.html" class="btn btn-primary">Explorar Carreras</a>
+            </div>
+
+            <!-- Favorites Grid -->
+            <div id="favorites-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: var(--spacing-2xl); margin-bottom: var(--spacing-2xl);">
+                <!-- Populated by JavaScript -->
+            </div>
+
+            <!-- Actions -->
+            <div id="favorites-actions" style="display: none; text-align: center; margin-top: var(--spacing-3xl);">
+                <button onclick="clearAllFavorites()" class="btn btn-secondary" style="background-color: var(--error); color: var(--white);">
+                    Limpiar Todos los Favoritos
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Servicios</h4>
+                    <ul>
+                        <li><a href="../careers/explore.html">Explorar carreras</a></li>
+                        <li><a href="../vocational-test/test.html">Test vocacional</a></li>
+                        <li><a href="../events/events.html">Eventos</a></li>
+                        <li><a href="../profile/profile.html">Perfil personalizado</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Sobre nosotros</h4>
+                    <ul>
+                        <li><a href="../support/support.html">Contacto</a></li>
+                        <li><a href="#">Privacidad</a></li>
+                        <li><a href="#">Términos y condiciones</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Ayuda</h4>
+                    <ul>
+                        <li><a href="../help/help-center.html">Centro de ayuda</a></li>
+                        <li><a href="#">Preguntas frecuentes</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Apps móviles</h4>
+                    <ul>
+                        <li><a href="#">Google Play</a></li>
+                        <li><a href="#">App Store</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 VOCATIO by DecideClaro. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Help Button -->
+    <a href="../help/help-center.html" class="help-button" aria-label="Centro de ayuda">?</a>
+
+    <style>
+        .favorite-card {
+            background-color: var(--white);
+            padding: var(--spacing-2xl);
+            border-radius: var(--radius-lg);
+            border: 2px solid var(--gray-light);
+            box-shadow: var(--shadow-md);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .favorite-card:hover {
+            box-shadow: var(--shadow-lg);
+            border-color: var(--primary);
+            transform: translateY(-5px);
+        }
+
+        .favorite-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .favorite-card h3 {
+            margin: 0;
+            color: var(--dark);
+            font-weight: 700;
+            font-size: 1.25rem;
+        }
+
+        .remove-favorite-btn {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--error);
+            transition: transform 0.3s ease;
+        }
+
+        .remove-favorite-btn:hover {
+            transform: scale(1.2);
+        }
+
+        .favorite-meta {
+            display: flex;
+            gap: var(--spacing-sm);
+            margin-bottom: var(--spacing-lg);
+            flex-wrap: wrap;
+        }
+
+        .favorite-badge {
+            background-color: var(--primary-light);
+            color: var(--primary);
+            padding: var(--spacing-xs) var(--spacing-md);
+            border-radius: var(--radius-full);
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: capitalize;
+        }
+
+        .favorite-date {
+            color: var(--gray);
+            font-size: 0.875rem;
+            margin-bottom: var(--spacing-lg);
+        }
+
+        @media (max-width: 768px) {
+            #favorites-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+
+    <script>
+        function loadFavorites() {
+            const favorites = JSON.parse(localStorage.getItem('favoritesCareers') || '[]');
+            const favoritesGrid = document.getElementById('favorites-grid');
+            const emptyState = document.getElementById('empty-state');
+            const favoritesActions = document.getElementById('favorites-actions');
+
+            if (favorites.length === 0) {
+                emptyState.style.display = 'block';
+                favoritesGrid.style.display = 'none';
+                favoritesActions.style.display = 'none';
+                return;
+            }
+
+            emptyState.style.display = 'none';
+            favoritesGrid.style.display = 'grid';
+            favoritesActions.style.display = 'block';
+
+            const careersData = {
+                'Ingeniería de Sistemas': {
+                    description: 'Diseña y desarrolla sistemas de software y tecnología',
+                    duration: '5 años',
+                    modality: 'Presencial/Virtual',
+                    link: '../careers/details.html?career=sistemas'
+                },
+                'Técnico en Programación': {
+                    description: 'Aprende a programar aplicaciones y software básico',
+                    duration: '2 años',
+                    modality: 'Presencial',
+                    link: '../careers/details.html?career=programacion'
+                },
+                'Medicina': {
+                    description: 'Formación completa para profesionales de la salud',
+                    duration: '6 años',
+                    modality: 'Presencial',
+                    link: '../careers/details.html?career=medicina'
+                },
+                'Administración de Empresas': {
+                    description: 'Lidera organizaciones hacia el éxito',
+                    duration: '4 años',
+                    modality: 'Presencial/Online',
+                    link: '../careers/details.html?career=admin'
+                },
+                'Ingeniería Civil': {
+                    description: 'Diseña y construye infraestructuras',
+                    duration: '5 años',
+                    modality: 'Presencial',
+                    link: '../careers/details.html?career=civil'
+                },
+                'Diseño Gráfico': {
+                    description: 'Crea experiencias visuales impactantes',
+                    duration: '4 años',
+                    modality: 'Presencial',
+                    link: '../careers/details.html?career=diseño'
+                },
+                'Biología': {
+                    description: 'Investiga la vida y organismos vivientes',
+                    duration: '4 años',
+                    modality: 'Presencial',
+                    link: '../careers/details.html?career=biologia'
+                }
+            };
+
+            favoritesGrid.innerHTML = favorites.map((fav, index) => {
+                const careerInfo = careersData[fav.name] || {
+                    description: 'Carrera profesional',
+                    duration: 'N/A',
+                    modality: 'N/A',
+                    link: '../careers/explore.html'
+                };
+
+                const date = new Date(fav.timestamp);
+                const formattedDate = date.toLocaleDateString('es-ES', { 
+                    year: 'numeric', 
+                    month: 'long', 
+                    day: 'numeric' 
+                });
+
+                return `
+                    <article class="favorite-card">
+                        <div class="favorite-header">
+                            <h3>${fav.name}</h3>
+                            <button class="remove-favorite-btn" onclick="removeFavorite(${index})" title="Eliminar de favoritos">
+                                ♥
+                            </button>
+                        </div>
+                        <p style="color: var(--gray); margin-bottom: var(--spacing-md);">${careerInfo.description}</p>
+                        <div class="favorite-meta">
+                            <span class="favorite-badge">${fav.area}</span>
+                            <span class="favorite-badge">${fav.formation === 'universitaria' ? 'Universitaria' : 'Técnica'}</span>
+                        </div>
+                        <p class="favorite-date">Guardado el ${formattedDate}</p>
+                        <div style="display: flex; gap: var(--spacing-md);">
+                            <span style="color: var(--gray); font-size: 0.875rem;">⏱ ${careerInfo.duration}</span>
+                            <span style="color: var(--gray); font-size: 0.875rem;">📍 ${careerInfo.modality}</span>
+                        </div>
+                        <a href="${careerInfo.link}" class="btn btn-primary" style="margin-top: var(--spacing-lg); width: 100%;">
+                            Ver Detalles
+                        </a>
+                    </article>
+                `;
+            }).join('');
+        }
+
+        function removeFavorite(index) {
+            const favorites = JSON.parse(localStorage.getItem('favoritesCareers') || '[]');
+            favorites.splice(index, 1);
+            localStorage.setItem('favoritesCareers', JSON.stringify(favorites));
+            loadFavorites();
+        }
+
+        function clearAllFavorites() {
+            if (confirm('¿Estás seguro de que quieres eliminar todas tus carreras favoritas?')) {
+                localStorage.removeItem('favoritesCareers');
+                loadFavorites();
+            }
+        }
+
+        // Load favorites on page load
+        loadFavorites();
+    </script>
+</body>
+</html>
