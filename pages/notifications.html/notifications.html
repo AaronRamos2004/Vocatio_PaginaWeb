@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mis Notificaciones - VOCATIO</title>
+    <link rel="stylesheet" href="../../css/styles.css">
+    <link rel="stylesheet" href="../../css/components.css">
+    <link rel="stylesheet" href="../../css/responsive.css">
+    <link rel="stylesheet" href="../../css/dashboard.css">
+</head>
+<body>
+    <!-- Dashboard navbar with profile image dropdown -->
+    <nav class="navbar navbar-dashboard">
+        <div class="container">
+            <div class="navbar-content">
+                <a href="../../index.html" class="logo">
+                    <span class="logo-text">vocatio</span>
+                </a>
+                <ul class="nav-menu">
+                    <li><a href="../dashboard/dashboard.html">Explorar carreras</a></li>
+                    <li><a href="#eventos">Eventos</a></li>
+                    <li><a href="#test">Test vocacional</a></li>
+                    <li><a href="../dashboard/my-results.html">Resultados</a></li>
+                    <li><a href="#ruta">Ruta de aprendizaje</a></li>
+                    <li><a href="../dashboard/progress.html">Progreso</a></li>
+                </ul>
+                <div class="profile-dropdown">
+                    <img src="../../assets/user-profile.jpg" alt="José" class="profile-image">
+                    <div class="dropdown-menu">
+                        <a href="../profile/profile.html">Mi Perfil</a>
+                        <a href="../notifications/notifications.html">Mis Notificaciones</a>
+                        <a href="../../index.html" class="logout">Cerrar sesión</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="notifications-main">
+        <div class="container">
+            <!-- Header Section -->
+            <section class="notifications-header">
+                <h1>Mis Notificaciones</h1>
+                <p>Mantente actualizado con toda la información importante</p>
+            </section>
+
+            <!-- Notification Filters -->
+            <div class="notifications-filters">
+                <button class="filter-btn active">Todas</button>
+                <button class="filter-btn">No leídas</button>
+                <button class="filter-btn">Eventos</button>
+                <button class="filter-btn">Resultados</button>
+                <button class="filter-btn">Sistema</button>
+            </div>
+
+            <!-- Notifications List -->
+            <section class="notifications-list">
+                <!-- Unread Notification -->
+                <div class="notification-item unread">
+                    <div class="notification-icon">📅</div>
+                    <div class="notification-content">
+                        <h3>Nuevo Evento: Charla de Ingeniería</h3>
+                        <p>Se ha añadido un nuevo evento a tu calendario. Charla: Ingeniería en Sistemas - 14 de enero de 2025 a las 16:00.</p>
+                        <span class="notification-time">Hace 2 horas</span>
+                    </div>
+                    <div class="notification-actions">
+                        <button class="btn-icon">✓</button>
+                    </div>
+                </div>
+
+                <!-- Unread Notification -->
+                <div class="notification-item unread">
+                    <div class="notification-icon">⭐</div>
+                    <div class="notification-content">
+                        <h3>Carrera Recomendada: Ingeniería de Datos</h3>
+                        <p>Basado en tu perfil vocacional, te recomendamos explorar la carrera de Ingeniería de Datos. Compatibilidad: 85%.</p>
+                        <span class="notification-time">Hace 5 horas</span>
+                    </div>
+                    <div class="notification-actions">
+                        <button class="btn-icon">✓</button>
+                    </div>
+                </div>
+
+                <!-- Read Notification -->
+                <div class="notification-item">
+                    <div class="notification-icon">📊</div>
+                    <div class="notification-content">
+                        <h3>Material completado: Introducción a IA</h3>
+                        <p>¡Felicidades! Has completado el material "Introducción a la Inteligencia Artificial". Progreso: 100%.</p>
+                        <span class="notification-time">Hace 1 día</span>
+                    </div>
+                    <div class="notification-actions">
+                        <button class="btn-icon">✓</button>
+                    </div>
+                </div>
+
+                <!-- Read Notification -->
+                <div class="notification-item">
+                    <div class="notification-icon">🎯</div>
+                    <div class="notification-content">
+                        <h3>Actualización de tu perfil vocacional</h3>
+                        <p>Tu perfil vocacional ha sido actualizado con los resultados del último test. Tu nuevo perfil es Analítico-Sistemático.</p>
+                        <span class="notification-time">Hace 2 días</span>
+                    </div>
+                    <div class="notification-actions">
+                        <button class="btn-icon">✓</button>
+                    </div>
+                </div>
+
+                <!-- Read Notification -->
+                <div class="notification-item">
+                    <div class="notification-icon">📚</div>
+                    <div class="notification-content">
+                        <h3>Nuevo material disponible en tu ruta</h3>
+                        <p>Se ha añadido un nuevo material a tu ruta de aprendizaje: "Fundamentos de Bases de Datos".</p>
+                        <span class="notification-time">Hace 3 días</span>
+                    </div>
+                    <div class="notification-actions">
+                        <button class="btn-icon">✓</button>
+                    </div>
+                </div>
+
+                <!-- Read Notification -->
+                <div class="notification-item">
+                    <div class="notification-icon">💬</div>
+                    <div class="notification-content">
+                        <h3>Respuesta a tu solicitud de soporte</h3>
+                        <p>Nuestro equipo ha respondido a tu solicitud sobre interpretación de resultados. Ticket #VOC-2025-0298.</p>
+                        <span class="notification-time">Hace 5 días</span>
+                    </div>
+                    <div class="notification-actions">
+                        <button class="btn-icon">✓</button>
+                    </div>
+                </div>
+
+                <!-- Read Notification -->
+                <div class="notification-item">
+                    <div class="notification-icon">🔔</div>
+                    <div class="notification-content">
+                        <h3>Recordatorio: Próximo evento en 24 horas</h3>
+                        <p>Te recordamos que tienes programado el evento "Feria Virtual de Universidades" en 24 horas.</p>
+                        <span class="notification-time">Hace 1 semana</span>
+                    </div>
+                    <div class="notification-actions">
+                        <button class="btn-icon">✓</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Empty State (if needed) -->
+            <!-- <div class="notifications-empty">
+                <p>No tienes notificaciones</p>
+            </div> -->
+        </div>
+    </main>
+
+    <!-- Help button -->
+    <a href="../help/help-center.html" class="help-button">?</a>
+
+    <script>
+        // Profile dropdown toggle
+        document.querySelector('.profile-image').addEventListener('click', function() {
+            document.querySelector('.dropdown-menu').classList.toggle('active');
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function(event) {
+            const dropdown = document.querySelector('.profile-dropdown');
+            if (!dropdown.contains(event.target)) {
+                document.querySelector('.dropdown-menu').classList.remove('active');
+            }
+        });
+
+        // Mark notification as read
+        document.querySelectorAll('.btn-icon').forEach(btn => {
+            btn.addEventListener('click', function() {
+                this.closest('.notification-item').classList.remove('unread');
+            });
+        });
+
+        // Filter notifications
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>

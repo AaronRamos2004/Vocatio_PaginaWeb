@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Descubre tus intereses, fortalezas y la carrera perfecta para ti">
+    <title>Test Vocacional - VOCATIO</title>
+    <link rel="stylesheet" href="../../css/styles.css">
+    <link rel="stylesheet" href="../../css/components.css">
+    <link rel="stylesheet" href="../../css/responsive.css">
+</head>
+<body>
+    <!-- Actualizado navbar con navegación completa y checkbox hack para menú hamburguesa -->
+    <header>
+        <nav class="navbar navbar-dashboard">
+            <div class="container">
+                <input type="checkbox" id="menu-toggle" class="hamburger-menu">
+                <div class="navbar-content">
+                    <a href="../dashboard/dashboard.html" class="logo">
+                        <span class="logo-text">vocatio</span>
+                    </a>
+                    <label for="menu-toggle" class="hamburger-icon">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </label>
+                    <ul class="nav-menu">
+                        <li><a href="../careers/explore.html">Explorar carreras</a></li>
+                        <li><a href="../events/events.html">Eventos</a></li>
+                        <li><a href="test.html" class="active">Test vocacional</a></li>
+                        <li><a href="results.html">Resultados</a></li>
+                        <li><a href="../materials/materials.html">Materiales</a></li>
+                        <li><a href="../dashboard/progress.html">Progreso</a></li>
+                    </ul>
+                    <div class="profile-dropdown">
+                        <!-- Añadiendo checkbox hack para dropdown de perfil -->
+                        <input type="checkbox" id="profile-dropdown-toggle" class="profile-dropdown-checkbox">
+                        <label for="profile-dropdown-toggle" class="profile-dropdown-label">
+                            <div class="profile-icon">J</div>
+                        </label>
+                        <div class="dropdown-menu">
+                            <a href="../profile/profile.html">Mi Perfil</a>
+                            <a href="../notifications/notifications.html">Notificaciones</a>
+                            <a href="../../index.html" class="logout">Cerrar sesión</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="test-header">
+            <div class="container">
+                <h1>Test Vocacional Inteligente</h1>
+                <p>Descubre tus intereses, fortalezas y la carrera perfecta para ti</p>
+            </div>
+        </section>
+
+        <section class="test-content">
+            <div class="container">
+                <div class="test-container">
+                    <div class="test-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 25%"></div>
+                        </div>
+                        <p>Pregunta 1 de 40</p>
+                    </div>
+
+                    <form class="test-form" action="results.html" method="get">
+                        <div class="question-card">
+                            <h3>¿Cuál de estas actividades te atrae más?</h3>
+                            
+                            <div class="question-options">
+                                <label class="option-label">
+                                    <input type="radio" name="question1" value="a">
+                                    <span class="option-text">Resolver problemas matemáticos complejos</span>
+                                </label>
+
+                                <label class="option-label">
+                                    <input type="radio" name="question1" value="b">
+                                    <span class="option-text">Ayudar a otras personas y entender sus emociones</span>
+                                </label>
+
+                                <label class="option-label">
+                                    <input type="radio" name="question1" value="c">
+                                    <span class="option-text">Crear diseños visuales y artísticos</span>
+                                </label>
+
+                                <label class="option-label">
+                                    <input type="radio" name="question1" value="d">
+                                    <span class="option-text">Dirigir equipos y tomar decisiones empresariales</span>
+                                </label>
+
+                                <label class="option-label">
+                                    <input type="radio" name="question1" value="e">
+                                    <span class="option-text">Investigar y descubrir nuevos conocimientos</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="test-actions">
+                            <!-- Botones ahora son enlaces funcionales -->
+                            <a href="../dashboard/dashboard.html" class="btn btn-secondary">Anterior</a>
+                            <a href="results.html" class="btn btn-primary">Siguiente</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2025 VOCATIO by DecideClaro. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <style>
+        .test-header {
+            padding: var(--spacing-3xl) 0;
+            background: linear-gradient(135deg, rgba(124, 58, 237, 0.1), rgba(191, 219, 254, 0.1));
+            text-align: center;
+        }
+
+        .test-header h1 {
+            margin-bottom: var(--spacing-md);
+        }
+
+        .test-header p {
+            font-size: 1.125rem;
+            color: var(--gray);
+        }
+
+        .test-content {
+            padding: var(--spacing-3xl) 0;
+        }
+
+        .test-container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .test-progress {
+            margin-bottom: var(--spacing-2xl);
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background-color: var(--gray-light);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .progress-fill {
+            height: 100%;
+            background-color: var(--primary);
+            transition: width 0.3s ease;
+        }
+
+        .test-progress p {
+            text-align: center;
+            color: var(--gray);
+            margin: 0;
+        }
+
+        .question-card {
+            background-color: var(--white);
+            padding: var(--spacing-2xl);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+            margin-bottom: var(--spacing-2xl);
+        }
+
+        .question-card h3 {
+            margin-bottom: var(--spacing-lg);
+            color: var(--dark);
+        }
+
+        .question-options {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-md);
+        }
+
+        .option-label {
+            display: flex;
+            align-items: center;
+            padding: var(--spacing-md);
+            border: 2px solid var(--gray-light);
+            border-radius: var(--radius-md);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .option-label:hover {
+            border-color: var(--primary);
+            background-color: rgba(124, 58, 237, 0.05);
+        }
+
+        .option-label input[type="radio"] {
+            margin-right: var(--spacing-md);
+            cursor: pointer;
+        }
+
+        .option-label input[type="radio"]:checked + .option-text {
+            color: var(--primary);
+            font-weight: 500;
+        }
+
+        .option-text {
+            flex: 1;
+            color: var(--dark);
+        }
+
+        .test-actions {
+            display: flex;
+            gap: var(--spacing-md);
+            justify-content: space-between;
+        }
+
+        .test-actions button {
+            flex: 1;
+        }
+
+        .btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        /* Estilos adicionales para el navbar actualizado y el profile-dropdown */
+        .navbar-dashboard {
+            background-color: var(--primary);
+            color: var(--white);
+        }
+
+        .navbar-dashboard .logo-text {
+            color: var(--white);
+        }
+
+        .navbar-dashboard .nav-menu li a {
+            color: var(--white);
+            transition: color 0.3s ease;
+        }
+
+        .navbar-dashboard .nav-menu li a:hover {
+            color: var(--gray-light);
+        }
+
+        .profile-dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .profile-dropdown-label {
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        .profile-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: var(--primary);
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 50px;
+            right: 0;
+            background-color: var(--white);
+            box-shadow: var(--shadow-md);
+            border-radius: var(--radius-md);
+            min-width: 160px;
+            z-index: 1;
+        }
+
+        .profile-dropdown-checkbox:checked + .dropdown-menu {
+            display: block;
+        }
+
+        .dropdown-menu a {
+            color: var(--dark);
+            padding: var(--spacing-md);
+            text-decoration: none;
+            display: block;
+            transition: color 0.3s ease;
+        }
+
+        .dropdown-menu a:hover {
+            color: var(--primary);
+        }
+
+        .logout {
+            color: var(--red);
+        }
+
+        .logout:hover {
+            color: var(--red-dark);
+        }
+
+        /* Estilos para el menú hamburguesa */
+        .hamburger-menu {
+            display: none;
+        }
+
+        .hamburger-icon {
+            display: none;
+            cursor: pointer;
+        }
+
+        .hamburger-icon span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background-color: var(--white);
+            margin: 5px 0;
+        }
+
+        @media (max-width: 768px) {
+            .hamburger-menu {
+                display: block;
+                position: absolute;
+                top: 20px;
+                right: 20px;
+            }
+
+            .hamburger-icon {
+                display: block;
+            }
+
+            .nav-menu {
+                display: none;
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                background-color: var(--primary);
+                color: var(--white);
+                padding: var(--spacing-lg) 0;
+            }
+
+            .nav-menu li {
+                width: 100%;
+                text-align: center;
+            }
+
+            .nav-menu li a {
+                color: var(--white);
+                padding: var(--spacing-md) 0;
+                width: 100%;
+            }
+
+            .nav-menu li a:hover {
+                color: var(--gray-light);
+            }
+
+            .hamburger-menu:checked + .navbar-content .nav-menu {
+                display: flex;
+            }
+        }
+    </style>
+</body>
+</html>
